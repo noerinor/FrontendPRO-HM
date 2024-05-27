@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Типи Даних у JavaScript</h1>
+    <script>
+      // Типи даних у JavaScript
+      const numberType = 42;
+      const stringType = "Привіт, світ!";
+      const booleanType = true;
+      const undefinedType = undefined;
+      const nullType = null;
+      const objectType = { name: "John", age: 30 };
+      const arrayType = [1, 2, 3, 4, 5];
+      const functionType = function () {
+        return "Hello!";
+      };
+      const symbolType = Symbol("symbol");
+      const bigIntType = 1234567890123456789012345678901234567890n;
+
+      console.log("Тип даних number: ", typeof numberType);
+      console.log("Тип даних string: ", typeof stringType);
+      console.log("Тип даних boolean: ", typeof booleanType);
+      console.log("Тип даних undefined: ", typeof undefinedType);
+      console.log("Тип даних null: ", typeof nullType); //
+      console.log("Тип даних object: ", typeof objectType);
+      console.log("Тип даних array: ", typeof arrayType);
+      console.log("Тип даних function: ", typeof functionType);
+      console.log("Тип даних symbol: ", typeof symbolType);
+      console.log("Тип даних bigint: ", typeof bigIntType);
+    </script>
+    <h1>Введення рядків</h1>
+    <script>
+      // Отримання трьох рядків від користувача
+      const firstString = prompt("Введіть перший рядок:");
+      const secondString = prompt("Введіть другий рядок:");
+      const thirdString = prompt("Введіть третій рядок:");
+
+      // Виведення рядків у довільному порядку однією командою
+      console.log(`${secondString}, ${thirdString}, ${firstString}`);
+    </script>
+
+    <h1>Розкладання числа на цифри</h1>
+
+    <script>
+      // Отримання п'ятизначного числа від користувача
+      const number = prompt("Введіть п'ятизначне число:");
+
+      // Розкладання числа на цифри і виведення через пробіл
+      console.log(number.split("").join(" "));
+    </script>
+  </body>
+</html>
