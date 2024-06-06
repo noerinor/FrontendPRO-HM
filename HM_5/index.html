@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ДЗ 5.1. -->
+    <script>
+      for (let i = 20; i <= 30; i += 0.5) {
+        console.log(i);
+      }
+    </script>
+
+    <!-- ДЗ 5.2. -->
+    <script>
+      for (let i = 10; i <= 100; i += 10) {
+        let usd = i;
+        let uah = usd * 26;
+        console.log(`${usd} USD - ${uah} UAH`);
+      }
+    </script>
+
+    <!-- ДЗ 5.3. -->
+    <script>
+      let N = +prompt("Введіть ціле число N:");
+      for (let i = 1; i <= 100; i++) {
+        let square = i ** 2;
+        if (square <= N) {
+          console.log(i);
+        }
+      }
+    </script>
+
+    <!-- ДЗ 5.4. -->
+
+    <script>
+      let num = parseInt(prompt("Введіть ціле число:"));
+
+      function isPrime(n) {
+        if (n <= 1) {
+          return false;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+          if (n % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      if (isPrime(num)) {
+        console.log(num + " є простим числом.");
+      } else {
+        console.log(num + " не є простим числом.");
+      }
+    </script>
+  </body>
+</html>
