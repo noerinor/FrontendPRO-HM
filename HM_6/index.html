@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HM_6</title>
+  </head>
+  <body>
+    <!-- ДЗ 6.1. -->
+    <script>
+      function removeChars(str, chars) {
+        return str
+          .split("")
+          .filter((char) => !chars.includes(char))
+          .join("");
+      }
+
+      const userInput = prompt("Enter a string:");
+      const charsToRemove = prompt("Enter chars to remove:");
+
+      const result = removeChars(userInput, charsToRemove.split(""));
+      alert(result);
+    </script>
+
+    <!-- ДЗ 6.2. -->
+    <script>
+      function averageOfNumbers(arr) {
+        let numbers = arr.filter((element) => typeof element === "number");
+
+        if (numbers.length === 0) {
+          return 0;
+        }
+
+        let sum = numbers.reduce((acc, num) => acc + num, 0);
+
+        let average = sum / numbers.length;
+
+        return average;
+      }
+
+      let mixedArray = [5, "hello", true, 8, 5, null, 3, "world", {}, 9];
+      let average = averageOfNumbers(mixedArray);
+      console.log("Середнє арифметичне числових елементів:", average);
+    </script>
+
+    <!-- ДЗ 6.3. -->
+    <script>
+      function removeElement(array, item) {
+        const index = array.indexOf(item);
+        if (index > -1) {
+          array.splice(index, 1);
+        }
+      }
+
+      const array = [1, 2, 3, 4, 5, 6, 7];
+
+      removeElement(array, 4);
+
+      console.log(array);
+    </script>
+  </body>
+</html>
