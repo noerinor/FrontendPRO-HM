@@ -30,3 +30,73 @@
     </script>
   </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HM_7</title>
+  </head>
+  <body>
+    <!-- ДЗ.7.1 -->
+    <script>
+      function createSumFunction() {
+        let total = 0;
+
+        return function (num) {
+          total += num;
+          return total;
+        };
+      }
+
+      const sum = createSumFunction();
+
+      console.log(sum(4));
+      console.log(sum(6));
+      console.log(sum(10));
+      console.log(sum(7));
+    </script>
+
+    <!-- ДЗ.7.2 -->
+    <script>
+      function multiply(x) {
+        return function (y) {
+          return x * y;
+        };
+      }
+
+      const result = multiply(5)(2);
+      console.log(result); // 10
+    </script>
+
+    <!-- ДЗ.7.3 -->
+
+    <script>
+      function promptUser() {
+        let userInput;
+
+        for (let i = 0; i < 10; i++) {
+          userInput = prompt(
+            `Введіть число більше 100 (${i + 1} спроба з 10):`
+          );
+
+          if (
+            userInput !== null &&
+            !isNaN(userInput) &&
+            parseInt(userInput) > 100
+          ) {
+            console.log("Останнє введене число:", parseInt(userInput));
+            return;
+          } else {
+            alert("Будь ласка, введіть число більше 100.");
+          }
+        }
+
+        console.log("Досягнуто максимальну кількість спроб.");
+      }
+
+      promptUser();
+    </script>
+  </body>
+</html>
