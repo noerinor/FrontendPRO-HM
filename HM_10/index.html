@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ДЗ 10.1. Картка користувача -->
+
+    <script>
+      class User {
+        constructor(name, age, location) {
+          this.name = name;
+          this.age = age;
+          this.location = location;
+        }
+
+        getUserInfo() {
+          return `Name: ${this.name}, Age: ${this.age}, Location: ${this.location}`;
+        }
+      }
+
+      const user = new User("Іван", 30, "Київ");
+
+      console.log(user.getUserInfo());
+    </script>
+
+    <!-- ДЗ 10.2. Отримання парних чисел з масиву -->
+
+    <script>
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      const evenNumbers = numbers.filter((number) => number % 2 === 0);
+
+      console.log(evenNumbers); // [2, 4, 6, 8, 10]
+    </script>
+
+    <!-- ДЗ 10.3. Книга контактів -->
+
+    <script>
+      class ContactBook {
+        constructor() {
+          this.contacts = [];
+        }
+
+        addContact(name, phone, email) {
+          const newContact = { name, phone, email };
+          this.contacts.push(newContact);
+        }
+
+        findContactByName(name) {
+          return this.contacts.find(
+            (contact) => contact.name.toLowerCase() === name.toLowerCase()
+          );
+        }
+
+        getAllContacts() {
+          return this.contacts;
+        }
+      }
+
+      const myContactBook = new ContactBook();
+
+      myContactBook.addContact(
+        "Іван Іванов",
+        "123-456-7890",
+        "ivan@example.com"
+      );
+      myContactBook.addContact(
+        "Марія Петрова",
+        "098-765-4321",
+        "maria@example.com"
+      );
+
+      const contact = myContactBook.findContactByName("Іван Іванов");
+      console.log(contact);
+
+      console.log(myContactBook.getAllContacts());
+    </script>
+  </body>
+</html>
