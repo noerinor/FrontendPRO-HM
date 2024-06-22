@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let company = {
+        sales: [
+          { name: "John", salary: 1000 },
+          { name: "Alice", salary: 600 },
+        ],
+        development: {
+          web: [
+            { name: "Peter", salary: 2000 },
+            { name: "Alex", salary: 1800 },
+          ],
+          internals: [{ name: "Jack", salary: 1300 }],
+        },
+      };
+
+      function getTotalSalary(company) {
+        let totalSalary = 0;
+
+        function calculateSalary(department) {
+          if (Array.isArray(department)) {
+            for (let employee of department) {
+              totalSalary += employee.salary;
+            }
+          } else {
+            for (let subDept in department) {
+              calculateSalary(department[subDept]);
+            }
+          }
+        }
+
+        calculateSalary(company);
+        return totalSalary;
+      }
+
+      console.log(getTotalSalary(company)); //
+    </script>
+  </body>
+</html>
