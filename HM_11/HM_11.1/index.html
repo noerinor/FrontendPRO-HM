@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таблиця Піфагора</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="pifagorTable"></table>
+
+    <script>
+      function createPifagorTable(size) {
+        const table = document.getElementById("pifagorTable");
+
+        for (let i = 0; i <= size; i++) {
+          const row = document.createElement("tr");
+
+          for (let j = 0; j <= size; j++) {
+            const cell = document.createElement(
+              i === 0 || j === 0 ? "th" : "td"
+            );
+
+            if (i === 0 && j === 0) {
+              cell.textContent = "";
+            } else if (i === 0) {
+              cell.textContent = j;
+            } else if (j === 0) {
+              cell.textContent = i;
+            } else {
+              cell.textContent = i * j;
+            }
+
+            row.appendChild(cell);
+          }
+
+          table.appendChild(row);
+        }
+      }
+
+      createPifagorTable(10);
+    </script>
+  </body>
+</html>

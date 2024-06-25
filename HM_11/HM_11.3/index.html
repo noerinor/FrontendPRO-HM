@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Випадкове зображення</title>
+      </head>
+      <body>
+        <div>
+          <img id="randomImage" src="" alt="Випадкове зображення" width="300" />
+        </div>
+        <button id="showImage">Показати випадкове зображення</button>
+
+        <script>
+          const images = [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg",
+            "8.jpg",
+            "9.jpg",
+          ];
+
+          const randomImage = document.getElementById("randomImage");
+          const showImageButton = document.getElementById("showImage");
+
+          function showRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+
+            randomImage.src = images[randomIndex];
+          }
+
+          showImageButton.addEventListener("click", showRandomImage);
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
