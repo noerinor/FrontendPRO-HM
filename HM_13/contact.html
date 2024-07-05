@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./contact.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container1">
+      <div class="form-container">
+        <h1>We would like to help you</h1>
+        <form onsubmit="return validateForm(event)">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            rows="3"
+            style="resize: none"
+            required
+            minlength="5"
+          ></textarea>
+          <span id="messageError" class="error"></span>
+
+          <h3>How to answer you?</h3>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="^\+380\d{9}$"
+            placeholder="Phone number"
+            required
+          />
+          <span id="phoneError" class="error"></span>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <span id="emailError" class="error"></span>
+
+          <button type="submit">Send message</button>
+        </form>
+        <script>
+          function validateForm(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value.trim();
+            var message = document.getElementById("message").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var email = document.getElementById("email").value.trim();
+
+            var messageError = document.getElementById("messageError");
+            var phoneError = document.getElementById("phoneError");
+            var emailError = document.getElementById("emailError");
+
+            if (message.length < 5) {
+              messageError.textContent =
+                "Message must be at least 5 characters long.";
+              return false;
+            }
+
+            if (!phone.match(/^\+380\d{9}$/)) {
+              phoneError.textContent =
+                "Phone number must start with +380 and have 9 digits.";
+              return false;
+            }
+
+            if (!email.match(/^\S+@\S+\.\S+$/)) {
+              emailError.textContent = "Email must be valid.";
+              return false;
+            }
+
+            console.log("Name:", name);
+            console.log("Message:", message);
+            console.log("Phone:", phone);
+            console.log("Email:", email);
+
+            return true;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
