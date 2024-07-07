@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список завдань</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 8px;
+        margin: 5px 0;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        position: relative;
+      }
+      li:hover {
+        background-color: #e0e0e0;
+      }
+      .deleteBtn {
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ff6666;
+        border: none;
+        color: white;
+        padding: 5px;
+        cursor: pointer;
+      }
+      li:hover .deleteBtn {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Список завдань</h1>
+    <input type="text" id="newTask" placeholder="Нове завдання" />
+    <button id="addTaskBtn">Додати завдання</button>
+    <ul id="taskList"></ul>
+
+    <script>
+      document
+        .getElementById("addTaskBtn")
+        .addEventListener("click", function () {
+          const newTaskInput = document.getElementById("newTask");
+          const taskText = newTaskInput.value.trim();
+          if (taskText !== "") {
+            const newTask = document.createElement("li");
+            newTask.textContent = taskText;
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Видалити";
+            deleteBtn.className = "deleteBtn";
+            newTask.appendChild(deleteBtn);
+
+            document.getElementById("taskList").appendChild(newTask);
+            newTaskInput.value = "";
+          }
+        });
+
+      document
+        .getElementById("taskList")
+        .addEventListener("click", function (event) {
+          if (event.target.classList.contains("deleteBtn")) {
+            if (confirm("Ви впевнені, що хочете видалити це завдання?")) {
+              event.target.parentElement.remove();
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

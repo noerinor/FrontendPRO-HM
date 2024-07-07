@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кнопки з обробником подій</title>
+    <style>
+      #buttonContainer {
+        margin-top: 20px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Кнопки з обробником подій</h1>
+    <div id="buttonContainer">
+      <button>Кнопка 1</button>
+      <button>Кнопка 2</button>
+      <button>Кнопка 3</button>
+      <button>Кнопка 4</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("buttonContainer")
+        .addEventListener("click", function (event) {
+          if (event.target.tagName === "BUTTON") {
+            alert("Ви натиснули на " + event.target.textContent);
+          }
+        });
+    </script>
+    <button><a href="./12.3.html">ДЗ 12.3. TODO лист</a></button>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>ДЗ 12.1. Переход на сторінку</h1>
+      <button id="inputLinkBtn">Введіть посилання</button>
+      <button id="redirectBtn">Перейти за посиланням</button>
+
+      <script>
+        let link = "";
+
+        document
+          .getElementById("inputLinkBtn")
+          .addEventListener("click", function () {
+            link = prompt("Введіть посилання:");
+          });
+
+        document
+          .getElementById("redirectBtn")
+          .addEventListener("click", function () {
+            if (link) {
+              window.location.href = link;
+            } else {
+              alert("Будь ласка, спочатку введіть посилання.");
+            }
+          });
+      </script>
+
+      <button><a href="./12.2.html">ДЗ 12.2. Використання подій</a></button>
+    </div>
+  </body>
+</html>
