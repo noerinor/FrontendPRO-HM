@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Widget</title>
+    <style>
+      #weather-widget {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        border: none;
+        width: 300px;
+        margin: 0 auto;
+      }
+      #weather {
+        margin-bottom: 20px;
+      }
+      #update-button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #16d4ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="weather-widget">
+      <div id="weather">
+        <h2>Weather</h2>
+        <p id="temperature">Temperature: --°C</p>
+        <p id="feels-like">Feels like: --°C</p>
+        <p id="humidity">Humidity: --%</p>
+        <p id="description">Description: --</p>
+      </div>
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Enter city"
+        value="Kyiv"
+      />
+      <button id="update-button">Update Weather</button>
+      <p id="error-message" style="color: red"></p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
