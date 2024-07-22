@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <style>
+      #timer {
+        font-size: 2em;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="timer">00:00</div>
+
+    <script>
+      let initialTime = 85;
+
+      function startTimer(duration) {
+        let timer = duration,
+          minutes,
+          seconds;
+        let interval = setInterval(function () {
+          minutes = Math.floor(timer / 60);
+          seconds = timer % 60;
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          document.getElementById("timer").textContent =
+            minutes + ":" + seconds;
+
+          if (--timer < 0) {
+            clearInterval(interval);
+          }
+        }, 1000);
+      }
+
+      // Запускаємо таймер
+      startTimer(initialTime);
+    </script>
+  </body>
+</html>
