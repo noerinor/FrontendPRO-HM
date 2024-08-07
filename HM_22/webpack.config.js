@@ -39,6 +39,8 @@ module.exports = {
           "sass-loader",
         ],
       },
+
+      // LESS
       {
         test: /\.less$/i,
         use: [
