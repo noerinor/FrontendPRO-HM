@@ -1,0 +1,36 @@
+.container {
+  margin-top: 100px;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: rgb(224, 237, 255);
+}
+
+.todo-item__description {
+  padding-left: 10px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+list-group-item,
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  .btn {
+    margin-left: auto;
+  }
+}
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+}
+body {
+  background-color: whitesmoke;
+}
