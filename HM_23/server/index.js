@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Указываем, где находятся статические файлы
+// Статичні файли
 app.use(express.static(path.join(__dirname, "../public")));
 
-// Подключение к MongoDB
+// MongoDB
 mongoose.connect("mongodb://localhost:27017/todos", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -27,7 +27,7 @@ const TodoSchema = new mongoose.Schema({
 
 const Todo = mongoose.model("Todo", TodoSchema);
 
-// CRUD маршруты
+// CRUD 
 app.post("/api/todos", async (req, res) => {
   const newTodo = new Todo({
     description: req.body.description,
@@ -65,7 +65,7 @@ app.delete("/api/todos/:id", async (req, res) => {
   res.status(204).send();
 });
 
-// Запускаем сервер
+// сервер
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
