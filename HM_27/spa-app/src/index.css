@@ -1,0 +1,65 @@
+/* index.css */
+
+/* Определяем переменные для тем */
+:root {
+  --form-control-bg: #ffffff;
+  --form-control-text: #000000;
+  --form-control-border: #ced4da;
+  --list-group-item-bg: #ffffff;
+  --list-group-item-border: #ced4da;
+}
+
+body.light {
+  background-color: white;
+  color: black;
+  --form-control-bg: #ffffff;
+  --form-control-border: #ced4da;
+  --list-group-item-bg: #ffffff;
+}
+
+body.dark {
+  background-color: #2c2c2c;
+  color: white;
+  --form-control-bg: #5b5b5b;
+  --form-control-border: #454545;
+  --list-group-item-bg: #5b5b5b;
+  --list-group-item-border: #454545;
+}
+
+/* Применяем переменные к form-control */
+.form-control {
+  background-color: var(--form-control-bg);
+  color: var(--form-control-text);
+  border: 1px solid var(--form-control-border);
+}
+.list-group-item {
+  background-color: var(--list-group-item-bg);
+  border: 1px solid var(--list-group-item-border);
+}
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: rgb(224, 237, 255);
+}
+.todo-item__description {
+  padding-left: 10px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.list-group-item,
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.btn {
+  margin-left: auto;
+}
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+}
