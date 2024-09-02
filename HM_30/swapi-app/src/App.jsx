@@ -20,6 +20,11 @@ function App() {
           <h2>{data.name}</h2>
           <p>Height: {data.height}</p>
           <p>Mass: {data.mass}</p>
+          <p>Hair Color: {data.hair_color}</p>
+          <p>Skin Color: {data.skin_color}</p>
+          <p>Eye Color: {data.eye_color}</p>
+          <p>Birth Year: {data.birth_year}</p>
+          <p>Gender: {data.gender}</p>
         </div>
       )}
       <footer>
