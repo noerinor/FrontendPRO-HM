@@ -15,8 +15,6 @@ export const counterSlice = createSlice({
   },
 });
 
-// Экспортируем автоматически созданные экшены
 export const { increment, decrement } = counterSlice.actions;
 
-// Экспортируем редюсер для использования в store
 export default counterSlice.reducer;
